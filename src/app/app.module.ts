@@ -1,54 +1,65 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-
-import { Home } from '../pages/home/home';
-import { Mortgage } from '../pages/mortgage/mortgage';
-import { Personal } from '../pages/personal/personal';
-import { CreditCard } from '../pages/creditcard/creditcard';
-import { Auto } from '../pages/auto/auto';
-import { Settings } from '../pages/settings/settings';
-import { AddHomeLoan } from '../pages/AddHomeLoan/addhomeloan';
-import { Amortization } from '../pages/Amortization/amortization';
-import { EditAmortization } from '../pages/EditAmortization/editamortization';
-import { AddAutoLoan } from '../pages/AddAutoLoan/AddAutoLoan';
-import { AddPersonalLoan } from '../pages/AddPersonal/AddPersonalLoan';
-import {APP_PROVIDERS} from './app.providers'
-
+import { HomePage } from '../pages/home/home';
+//import { ListPage } from '../pages/list/list';
+import { SalesforcePage } from '../pages/salesforce/salesforce';
+import { ServicenowPage } from '../pages/servicenow/servicenow'; 
+import { SaleforceDetail } from '../pages/salesforcedetail/salesforcedetail';
+import { PaymentPage } from '../pages/payment/payment';
+import { WorkshopPage } from '../pages/workshop/workshop'; 
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { SignupPage } from '../pages/signup/signup';
+import { ProfilePage } from '../pages/profile/profile';
+import { SignoutPage } from '../pages/signout/signout';
+import { SettingPage } from '../pages/setting/setting';
+import { ServicenowDetail } from '../pages/servicenowdetail/servicenowdetail';
+import { WorkshopDetail } from '../pages/workshopdetail/workshopdetail';
 @NgModule({
   declarations: [
     MyApp,
-    Home,
-    Mortgage,
-	Personal,
-	Auto,
-	CreditCard,
-	Settings,
-	AddHomeLoan,
-	Amortization,
-      EditAmortization,
-      AddAutoLoan,
-      AddPersonalLoan
+    HomePage,
+    //ListPage,
+	SalesforcePage,
+	ServicenowPage,
+	WorkshopPage,
+	SaleforceDetail,
+	PaymentPage,
+	SignupPage,
+	ProfilePage,
+	SignoutPage,
+	SettingPage,
+	ServicenowDetail,
+	WorkshopDetail,
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Home,
-    Mortgage,
-	Personal,
-	Auto,
-	CreditCard,
-	Settings,
-	AddHomeLoan,
-	Amortization,
-      EditAmortization,
-      AddAutoLoan,
-      AddPersonalLoan
+    HomePage,
+  //  ListPage,
+	SalesforcePage,
+	ServicenowPage,
+	WorkshopPage,
+	SaleforceDetail,
+	PaymentPage,
+	SignupPage,
+	ProfilePage,
+	SignoutPage,
+	SettingPage,
+	ServicenowDetail,
+	WorkshopDetail,
   ],
-  providers: [APP_PROVIDERS]
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule {}
